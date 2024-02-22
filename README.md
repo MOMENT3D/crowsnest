@@ -1,14 +1,6 @@
 # Crowsnest for Moment
 Based on Mainsail-crew Sonar. customized Moment.
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset=".github/crowsnest-logo-darkmode.png">
-    <source media="(prefers-color-scheme: light)" srcset=".github/crowsnest-logo-lightmode.png">
-    <img alt="Crowsnest Logo" src=".github/crowsnest-logo-lightmode.png" style="width: 30%">
-  </picture>
-</p>
-
 # crowsnest
 
 A wrapper script for webcam streaming on Raspberry Pi OS Lite images like [MainsailOS](https://github.com/MOMENT3D/MainsailOS). Mainly written in bash.
