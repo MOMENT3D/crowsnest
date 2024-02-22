@@ -6,7 +6,7 @@
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
 #### Copyright 2021
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####
@@ -141,7 +141,7 @@ main "${1}"
 # If raspicams set to variable bitrate, they tend to show
 # a "block-like" view after reboots
 # To prevent that blockyfix should apply constant bitrate befor start of ustreamer
-# See https://github.com/mainsail-crew/crowsnest/issues/33
+# See https://github.com/MOMENT3D/crowsnest/issues/33
 function blockyfix {
     local dev v4l2ctl
 

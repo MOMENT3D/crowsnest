@@ -2,14 +2,14 @@
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
 #### Copyright 2021 - 2022
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####
 
 [Unit]
 Description=crowsnest - Multi Webcam/Streamer Control Deamon
-Documentation=https://github.com/mainsail-crew/crowsnest
+Documentation=https://github.com/MOMENT3D/crowsnest
 After=udev.service network-online.target nss-lookup.target
 Wants=udev.service network-online.target
 Before=nginx.service

@@ -3,14 +3,14 @@
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
 #### Copyright 2021 - till today
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####
 # shellcheck disable=all
 
 # crowsnest repo
-[[ -n "$CROWSNEST_REPO_SHIP" ]] || CROWSNEST_REPO_SHIP="https://github.com/mainsail-crew/crowsnest.git"
+[[ -n "$CROWSNEST_REPO_SHIP" ]] || CROWSNEST_REPO_SHIP="https://github.com/MOMENT3D/crowsnest.git"
 [[ -n "$CROWSNEST_REPO_BRANCH" ]] || CROWSNEST_REPO_BRANCH="master"
 
 # crowsnest setup

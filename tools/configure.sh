@@ -4,7 +4,7 @@
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
 #### Copyright 2021 - 2022
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####

@@ -30,3 +30,8 @@ tools/.config
 
 # Ignore pkglist
 tools/pkglist.sh
+
+.vs/
+.vs/*
+.bin/
+.obj/

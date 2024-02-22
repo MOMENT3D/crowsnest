@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/mainsail-crew/crowsnest?style=flat-square&color=green)](https://github.com/mainsail-crew/crowsnest/blob/master/LICENSE) [![language](https://img.shields.io/github/languages/top/mainsail-crew/crowsnest?style=flat-square&logo=gnubash&logoColor=white)](https://github.com/mainsail-crew/crowsnest/search?l=shell) [![commit-activity](https://img.shields.io/github/commit-activity/m/mainsail-crew/crowsnest?style=flat-square)](https://github.com/mainsail-crew/crowsnest/commits) [![issue-search](https://img.shields.io/github/issues/mainsail-crew/crowsnest?style=flat-square)](https://github.com/mainsail-crew/crowsnest/issues) [![discord](https://img.shields.io/discord/758059413700345988?color=%235865F2&label=discord&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/mainsail)
+[![license](https://img.shields.io/github/license/MOMENT3D/crowsnest?style=flat-square&color=green)](https://github.com/MOMENT3D/crowsnest/blob/master/LICENSE) [![language](https://img.shields.io/github/languages/top/MOMENT3D/crowsnest?style=flat-square&logo=gnubash&logoColor=white)](https://github.com/MOMENT3D/crowsnest/search?l=shell) [![commit-activity](https://img.shields.io/github/commit-activity/m/MOMENT3D/crowsnest?style=flat-square)](https://github.com/MOMENT3D/crowsnest/commits) [![issue-search](https://img.shields.io/github/issues/MOMENT3D/crowsnest?style=flat-square)](https://github.com/MOMENT3D/crowsnest/issues) [![discord](https://img.shields.io/discord/758059413700345988?color=%235865F2&label=discord&logo=discord&logoColor=white&style=flat-square)](https://discord.gg/mainsail)
 
 <p align="center">
   <picture>
@@ -10,7 +10,7 @@
 
 # crowsnest
 
-A wrapper script for webcam streaming on Raspberry Pi OS Lite images like [MainsailOS](https://github.com/mainsail-crew/MainsailOS). Mainly written in bash.
+A wrapper script for webcam streaming on Raspberry Pi OS Lite images like [MainsailOS](https://github.com/MOMENT3D/MainsailOS). Mainly written in bash.
 
 -   [Why is it called crowsnest?](#why-is-it-called-crowsnest)
 -   [Support](#support)
@@ -85,7 +85,7 @@ _If you test that on other distributions, feel free to open a Pull Request to en
 OS images that are based on Debian 10 (codename 'buster') are no longer supported with Crowsnest version 4 (current `master` branch)!
 
 Please use the `legacy/v3` branch for these OS types.\
-See the [README.md](https://github.com/mainsail-crew/crowsnest/tree/legacy/v3) of this branch for usage instructions.
+See the [README.md](https://github.com/MOMENT3D/crowsnest/tree/legacy/v3) of this branch for usage instructions.
 
 #### Hint Bookworm
 
@@ -127,7 +127,7 @@ Please see the according [FAQ](https://crowsnest.mainsail.xyz/faq/backends-from-
 
 ## Credits
 
-I want to give a huge shoutout to [_lixxbox_](https://github.com/lixxbox) and [_alexz_](https://github.com/zellneralex) from the [mainsail-crew](https://github.com/orgs/mainsail-crew/people). \
+I want to give a huge shoutout to [_lixxbox_](https://github.com/lixxbox) and [_alexz_](https://github.com/zellneralex) from the [MOMENT3D](https://github.com/orgs/MOMENT3D/people). \
 Without these guys it simply were not possible to get that done.
 
 They both mentioned improvements and tested a heck out of there machines to get this all functioning well. \
@@ -140,7 +140,7 @@ Thanks to [ayufan](https://github.com/ayufan) for keep going on camera-streamer,
 ---
 
 <p align="center">
-  <img src="https://github.com/mainsail-crew/docs/raw/master/assets/img/logo.png">
+  <img src="https://github.com/MOMENT3D/docs/raw/master/assets/img/logo.png">
 </p>
 
 **So, with all that said, get your position seaman! Prepare to get wet feets on your journey.**

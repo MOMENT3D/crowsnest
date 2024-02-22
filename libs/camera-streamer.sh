@@ -6,7 +6,7 @@
 ####
 #### Written by Stephan Wendel aka KwadFan <me@stephanwe.de>
 #### Copyright 2021 - 2022
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####
@@ -43,7 +43,7 @@ function run_ayucamstream() {
     start_param=( --http-port="${pt}" )
 
     if [[ -n "${noprx}" ]] && [[ "${noprx}" = "true" ]]; then
-        # See https://github.com/mainsail-crew/crowsnest/pull/221#issuecomment-1863555700 for why
+        # See https://github.com/MOMENT3D/crowsnest/pull/221#issuecomment-1863555700 for why
         # we cannot assume the binary has support for `--http-listen`.
         if ${ust_bin} --help | grep -q "http-listen"; then
             start_param+=( --http-listen=0.0.0.0 )

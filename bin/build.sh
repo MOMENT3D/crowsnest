@@ -6,7 +6,7 @@
 #### Copyright 2021 - 2024
 #### Co-authored by Patrick Gehrsitz aka mryel00 <mryel00.github@gmail.com>
 #### Copyright 2024 - till today
-#### https://github.com/mainsail-crew/crowsnest
+#### https://github.com/MOMENT3D/crowsnest
 ####
 #### This File is distributed under GPLv3
 ####

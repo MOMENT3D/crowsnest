@@ -11,7 +11,7 @@ All notable changes to Crowsnest will be documented in this file.\n
 # https://tera.netlify.app/docs/#introduction
 body = """
 {% if version %}\
-    ## [{{ version | trim_start_matches(pat="v") }}](https://github.com/mainsail-crew/crowsnest/releases/tag/{{version}}) - {{ timestamp | date(format="%Y-%m-%d") }}
+    ## [{{ version | trim_start_matches(pat="v") }}](https://github.com/MOMENT3D/crowsnest/releases/tag/{{version}}) - {{ timestamp | date(format="%Y-%m-%d") }}
 \
 {% else %}\
     ## [unreleased]
@@ -48,7 +48,7 @@ footer = """
 # postprocessors
 postprocessors = [
     { pattern = '(\(<REPO>/pull/[0-9]+\)\)) \| .+', replace = "${1}" },
-    { pattern = '<REPO>', replace = "https://github.com/mainsail-crew/crowsnest" }, # replace repository URL
+    { pattern = '<REPO>', replace = "https://github.com/MOMENT3D/crowsnest" }, # replace repository URL
 ]
 
 [git]
