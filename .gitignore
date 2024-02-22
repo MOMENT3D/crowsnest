@@ -35,3 +35,4 @@ tools/pkglist.sh
 .vs/*
 .bin/
 .obj/
+.vs
