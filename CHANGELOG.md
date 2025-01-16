@@ -2,7 +2,7 @@
 # Changelog
 All notable changes to Crowsnest will be documented in this file.
 
-## [4.1.4](https://github.com/MOMENT3D/crowsnest/releases/tag/v4.1.4) - 2024-02-17
+## [4.1.4](https://github.com/mainsail-crew/crowsnest/releases/tag/v4.1.4) - 2024-02-17
 ### Bug Fixes and Improvements
 
 - Support `no_proxy` mode with camera-streamer (bookworm) ([#238](https://github.com/MOMENT3D/crowsnest/pull/238))

@@ -82,13 +82,15 @@ function check_dep {
 
 function check_apps {
     local cstreamer ustreamer
-    ustreamer="bin/ustreamer/ustreamer"
+    ustreamer="bin/ustreamer/src/ustreamer.bin"
     cstreamer="bin/camera-streamer/camera-streamer"
-
     if [[ -x "${BASE_CN_PATH}/${ustreamer}" ]]; then
-        log_msg "Dependency: '${ustreamer##*/}' found in ${ustreamer}."
+        log_msg "Dependency: 'ustreamer' found in ${ustreamer}."
+        UST_BIN="${BASE_CN_PATH}/${ustreamer}"
+        # shellcheck disable=SC2034
+        declare -r UST_BIN
     else
-        log_msg "Dependency: '${ustreamer##*/}' not found. Exiting!"
+        log_msg "Dependency: 'ustreamer' not found. Exiting!"
         exit 1
     fi
 
