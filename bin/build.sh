@@ -14,7 +14,7 @@
 # shellcheck enable=require-variable-braces
 
 ### Disable SC2317 due Trap usage
-# shellcheck disable=SC2317
+# shellcheck disable=SC2317,SC2329
 
 # Exit on errors
 set -Ee
@@ -35,7 +35,7 @@ if [[ -z "${CROWSNEST_USTREAMER_REPO_SHIP}" ]]; then
     CROWSNEST_USTREAMER_REPO_SHIP="https://github.com/pikvm/ustreamer.git"
 fi
 if [[ -z "${CROWSNEST_USTREAMER_REPO_BRANCH}" ]]; then
-    CROWSNEST_USTREAMER_REPO_BRANCH="v6.10"
+    CROWSNEST_USTREAMER_REPO_BRANCH="v6.36"
 fi
 
 # Camera-streamer repo
@@ -44,7 +44,7 @@ if [[ -z "${CROWSNEST_CAMERA_STREAMER_REPO_SHIP}" ]]; then
     CROWSNEST_CAMERA_STREAMER_REPO_SHIP="https://github.com/mryel00/camera-streamer.git"
 fi
 if [[ -z "${CROWSNEST_CAMERA_STREAMER_REPO_BRANCH}" ]]; then
-    CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="master"
+    CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="main"
 fi
 
 
@@ -65,39 +65,8 @@ show_help() {
 }
 
 ## Helper funcs
-### Check if device is Raspberry Pi
-is_raspberry_pi() {
-    if [[ -f /proc/device-tree/model ]] &&
-    grep -q "Raspberry" /proc/device-tree/model; then
-        echo "1"
-    else
-        echo "0"
-    fi
-}
-
-is_bookworm() {
-    if [[ -f /etc/os-release ]]; then
-        grep -cq "bookworm" /etc/os-release &> /dev/null && echo "1" || echo "0"
-    fi
-}
-
-is_pi5() {
-    if [[ -f /proc/device-tree/model ]] &&
-    grep -q "Raspberry Pi 5" /proc/device-tree/model; then
-        echo "1"
-    else
-        echo "0"
-    fi
-}
-
-is_ubuntu_arm() {
-    if [[ "$(is_raspberry_pi)" = "1" ]] &&
-    grep -q "ubuntu" /etc/os-release; then
-        echo "1"
-    else
-        echo "0"
-    fi
-}
+# shellcheck source=./libs/helper_fn.sh
+. "${BASE_CN_BIN_PATH}/../libs/helper_fn.sh"
 
 ### Get avail mem
 get_avail_mem() {
@@ -134,9 +103,7 @@ clone_ustreamer() {
 clone_cstreamer() {
     ## Special handling because only supported on Raspberry Pi
     [[ -n "${CROWSNEST_UNATTENDED}" ]] || CROWSNEST_UNATTENDED="0"
-    if { [[ "$(is_raspberry_pi)" = "0" ]] ||
-    [[ "$(is_pi5)" = "1" ]] ||
-    [[ "$(is_ubuntu_arm)" = "1" ]]; } &&
+    if [[ "$(use_cs)" = "0" ]] &&
     [[ "${CROWSNEST_UNATTENDED}" = "0" ]]; then
         printf "Device is not supported! Cloning camera-streamer ... [SKIPPED]\n"
         return
@@ -145,10 +112,10 @@ clone_cstreamer() {
         printf "%s already exist ... [SKIPPED]\n" "${CSTREAMER_PATH}"
         return
     fi
-    if [[ "$(is_bookworm)" = "1" ]]; then
-        printf "\nBookworm detected!\n"
-        printf "Using main branch of camera-streamer for Bookworm ...\n\n"
-        CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="main"
+    if [[ "$(is_os_release "bullseye")" = "1" ]]; then
+        printf "\nBullseye detected!\n"
+        printf "Using legacy/bullseye branch of camera-streamer for Bullseye ...\n\n"
+        CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="legacy/bullseye"
     fi
     git clone "${CROWSNEST_CAMERA_STREAMER_REPO_SHIP}" \
         -b "${CROWSNEST_CAMERA_STREAMER_REPO_BRANCH}" \
@@ -170,7 +137,7 @@ clean_apps() {
     for app in "${ALL_PATHS[@]}"; do
         if [[ ! -d "${app}" ]]; then
             printf "'%s' does not exist! Clean ... [SKIPPED]\n" "${app}"
-        else 
+        else
             printf "\nRunning 'make clean' in %s ... \n" "${app}"
             pushd "${app}" &> /dev/null || exit 1
             make clean

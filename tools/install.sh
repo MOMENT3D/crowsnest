@@ -26,6 +26,7 @@ SRC_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd -P)"
 [[ -n "${CROWSNEST_UNATTENDED}" ]] || CROWSNEST_UNATTENDED="0"
 
 main() {
+    . "${SRC_DIR}/../libs/helper_fn.sh"
     . "${SRC_DIR}/libs/build_apps.sh"
     . "${SRC_DIR}/libs/config.sh"
     . "${SRC_DIR}/libs/core.sh"
@@ -51,7 +52,7 @@ main() {
 
     [[ -n "${BASE_USER}" ]] || BASE_USER="${SUDO_USER}"
 
-    if [[ "$(is_buster)" = "1" ]]; then
+    if [[ "$(is_os_release "buster")" = "1" ]]; then
         not_supported_msg
         exit 1
     fi
@@ -62,7 +63,7 @@ main() {
     if run_apt_update; then
         status_msg "Running apt-get update first ..." "0"
     else
-        status_msg "Running apt-get update first ..." "1"
+        status_msg "Running apt-get update first ..." "4"
     fi
 
     if [[ "${CROWSNEST_UNATTENDED}" != "1" ]]; then
@@ -75,7 +76,7 @@ main() {
         fi
         status_msg "Doing some tests ..." "0"
     else
-        if [[ "$(is_raspbian)" = "1" ]]; then
+        if [[ "$(is_raspios)" = "1" ]]; then
             CN_INSTALL_CS="1"
         else
             CN_INSTALL_CS="0"
@@ -152,10 +153,10 @@ main() {
 
     add_group_video
 
-    if [[ "$(is_bookworm)" = "1" ]] && [[ "${CN_INSTALL_CS}" = "1" ]]; then
-        msg "\nBookworm detected!"
-        msg "Using main branch of camera-streamer for Bookworm ...\n"
-        CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="main"
+    if [[ "$(is_os_release "bullseye")" = "1" ]] && [[ "${CN_INSTALL_CS}" = "1" ]]; then
+        msg "\nBullseye detected!"
+        msg "Using legacy/bullseye branch of camera-streamer for Bullseye ...\n"
+        CROWSNEST_CAMERA_STREAMER_REPO_BRANCH="legacy/bullseye"
     fi
 
     build_apps
